@@ -1,0 +1,54 @@
+%  A simple AAU report template.
+%  2013-03-06 v. 1.0.0
+%  Copyright 2010-2013 by Jesper Kjær Nielsen <jkn@es.aau.dk>
+%
+%  This is free software: you can redistribute it and/or modify
+%  it under the terms of the GNU General Public License as published by
+%  the Free Software Foundation, either version 3 of the License, or
+%  (at your option) any later version.
+%
+%  This is distributed in the hope that it will be useful,
+%  but WITHOUT ANY WARRANTY; without even the implied warranty of
+%  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+%  GNU General Public License for more details.
+%
+%  You can find the GNU General Public License at <http://www.gnu.org/licenses/>.
+%
+\input{setup/preamble.tex}% package inclusion and set up of the document
+\input{setup/hyphenations.tex}% 
+\input{setup/macros.tex}% my new macros
+
+\begin{document}
+%frontmatter
+\pagestyle{empty} %disable headers and footers
+\pagenumbering{roman} %use roman page numbering in the frontmatter
+\input{sections/frontpage.tex}
+\cleardoublepage
+\renewcommand{\contentsname}{Indice}
+\pdfbookmark[0]{Indice}{label:Indice}
+\pagestyle{fancy} %enable headers and footers again
+\tableofcontents
+\cleardoublepage
+%mainmatter
+\pagenumbering{arabic} %use arabic page numbering in the mainmatter
+\renewcommand{\chaptername}{Capítulo}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\bibname}{Bibliografía}
+\chapter*{Ley de Enfriamiento de Newton} \label{ch:Ley de Enfriamiento de Newton}
+\addcontentsline{toc}{chapter}{Ley de Enfriamiento de Newton}
+\markboth{Ley de Enfriamiento de Newton}{Ley de Enfriamiento de Newton}
+
+\input{sections/introduccion.tex}
+\input{sections/objetivos.tex}
+\input{sections/marco_teorico.tex}
+\input{sections/procedimiento_experimental.tex}
+\input{sections/datos_experimentales.tex}
+\input{sections/resultados_experimentales.tex}
+\input{sections/conclusion.tex}
+
+\bibliography{bib/mybib}
+\label{bib:mybiblio}
+%\renewcommand{\appendixname}{Apéndice}
+%\appendix
+%\input{sections/appAname.tex}
+\end{document}
