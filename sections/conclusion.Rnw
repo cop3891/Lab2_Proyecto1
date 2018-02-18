@@ -5,17 +5,10 @@
 \item El uso de AWS brinda el soporte suficiente para que Virtual Pharma lleve a cabo sus operaciones.
 \item El manejo de la información de pacientes le da a Virtual Pharma un valor agregado al crear una red de información entre los centros médicos que no poseen una relación directa.
 \end{enumerate}
-% latex table generated in R 3.4.3 by xtable 1.8-2 package
-% Sun Feb 18 13:18:42 2018
-\begin{table}[ht]
-\centering
-\begin{tabular}{rrr}
-  \hline
- & n & g \\ 
-  \hline
-1 & 1.00 & 9.78 \\ 
-  2 & 2.00 & 9.80 \\ 
-  3 & 3.00 & 9.80 \\ 
-   \hline
-\end{tabular}
-\end{table}
+<<echo=F,results=tex>>=
+library(xtable)
+n<-c(1,2,3)
+g<-c(9.78,9.8,9.8)
+tabla <- data.frame(n,g)
+xtable(tabla)
+@
