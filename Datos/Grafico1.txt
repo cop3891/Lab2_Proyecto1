@@ -1,0 +1,9 @@
+FIT_LIMIT=1E-10
+f1(x)=a*x + b
+fit f1(x) 'tabla1.dat' using 1:2 via a,b
+set title "Regresión Lineal"
+set grid
+set ylabel "$x[\\lambda]$\\ (cm)"
+set xlabel "$\\lambda \\ (\\AA)$"
+set xrange[3500:7000]
+set yrange[0:10]
